@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.test.kyw7.androidreview.DatabaseHelper.DataBaseHelper;
 import com.test.kyw7.androidreview.R;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -42,12 +43,15 @@ public class LogActivity extends AppCompatActivity {
         AlertDialog dialog  = new AlertDialog.Builder(this).create();
         dialog.setTitle("这是该记录的详细情况");
         dialog.setMessage("是否删除("+log.log+")");
+        dialog.setButton(AlertDialog.BUTTON_POSITIVE,"取消",(AlertDialog,which)->{
+            dialog.dismiss();
+        });
         dialog.setButton(AlertDialog.BUTTON_NEGATIVE,"删除",(Alertdialog,which)->{
             dataBaseHelper.getWritableDatabase().delete("LOG","id=?",new String[]{String.valueOf(log.id)});
             adapter.remove(log);
             dialog.dismiss();
         });
-
+        dialog.show();
     }
 
     public void loadData(){

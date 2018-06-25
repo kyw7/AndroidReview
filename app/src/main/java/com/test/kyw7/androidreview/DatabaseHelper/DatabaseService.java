@@ -53,7 +53,7 @@ public class DatabaseService extends Service {
                             "插入" + log, Toast.LENGTH_SHORT).show();
                 });
             }
-        },0,400);
+        },0,30000);
         return super.onStartCommand(intent,flags,startId);
     }
 

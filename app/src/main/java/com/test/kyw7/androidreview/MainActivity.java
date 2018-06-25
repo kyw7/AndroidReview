@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             "数据库显示"
     );
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

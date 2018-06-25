@@ -5,6 +5,10 @@ public class log {
     long createTime;
     String log;
 
+    @Override
+    public String toString() {
+        return "id=" + id + "\ncreateTime=" + createTime + "\nlog=" + log ;
+    }
 
     public void setId(int id) {
         this.id = id;
