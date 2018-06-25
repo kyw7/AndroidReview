@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidReview</string>
+    <array name="spinner_gender">
+        <item>男</item>
+        <item>女</item>
+    </array>
 </resources>
