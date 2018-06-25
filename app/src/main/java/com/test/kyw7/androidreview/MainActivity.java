@@ -8,8 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.facebook.stetho.Stetho;
 import com.test.kyw7.androidreview.Broadcast.BroadCastActivity;
+import com.test.kyw7.androidreview.DatabaseHelper.DatabaseActivity;
 import com.test.kyw7.androidreview.httpService.HttpActivity;
+import com.test.kyw7.androidreview.log.LogActivity;
 import com.test.kyw7.androidreview.map.MapActivity;
 import com.test.kyw7.androidreview.register.RegisterActivity;
 import com.test.kyw7.androidreview.subject.SubjectActivity;
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Stetho.initializeWithDefaults(this);
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter<>(this,R.layout.item_title,titiles));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, SubjectActivity.class);
                         break;
                     case 6:
-                        intent = new Intent(MainActivity.this, BroadCastActivity.class);
+                        intent = new Intent(MainActivity.this, DatabaseActivity.class);
                         break;
                     case 7:
-                        intent = new Intent(MainActivity.this, BroadCastActivity.class);
+                        intent = new Intent(MainActivity.this, LogActivity.class);
                         break;
                         default:
                             break;
@@ -72,6 +76,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

@@ -8,12 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import com.test.kyw7.androidreview.R;
-
 import java.util.Arrays;
 import java.util.List;
-
 
 public class SubjectActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
